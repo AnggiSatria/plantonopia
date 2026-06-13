@@ -41,7 +41,21 @@
     {{-- Search --}}
 
     {{-- Product --}}
-    <div class="container">
+    <div class="swiper productSwiper">
+    <div class="swiper-wrapper">
+
+        @foreach($products as $product)
+            <div class="swiper-slide">
+                <x-product-card :product="$product" />
+            </div>
+        @endforeach
+
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+    <!-- <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @forelse ($products as $product)
                 <div class="col">
@@ -62,7 +76,7 @@
         <div class="mt-5">
             {{ $products->appends(request()->query())->links('pagination::bootstrap-5') }}
         </div>
-    </div>
+    </div> -->
     {{-- Product --}}
 @endsection
 
@@ -92,6 +106,28 @@
             $('#searchButton').click(function() {
                 updateUrl();
             });
+
+            new Swiper(".productSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
+                }
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
         });
     </script>
 @endsection
