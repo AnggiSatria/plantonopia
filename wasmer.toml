@@ -1,0 +1,32 @@
+[package]
+name = "anggi-satria/plantopia"
+version = "0.1.0"
+description = "Plantopia Laravel on Wasmer"
+
+[env]
+APP_NAME = "Plantopia"
+APP_ENV = "production"
+APP_KEY = "base64:rwe9dm7ZoQ95xdG9r00ODj8jFQCbbwJFsHiNAW4xTeQ="
+APP_DEBUG = "false"
+APP_URL = "http://localhost"
+APP_TIMEZONE = "UTC"
+
+LOG_CHANNEL = "stderr"
+
+# Konfigurasi Database TiDB
+DB_CONNECTION = "mysql"
+DB_HOST = "gateway01.ap-southeast-1.prod.aws.tidbcloud.com"
+DB_PORT = "4000"
+DB_DATABASE = "test"
+DB_NAME = "test"
+DB_USERNAME = "LAN2GrEFeZLVko5.root"
+DB_PASSWORD = "8X857S7z5mB1EiKe"
+
+# Driver dasar untuk mencegah createDriver() error
+SESSION_DRIVER = "database"
+SESSION_LIFETIME = "120"
+CACHE_STORE = "database"
+CACHE_DRIVER = "database"
+QUEUE_CONNECTION = "sync"
+FILESYSTEM_DISK = "local"
+BROADCAST_CONNECTION = "log"
